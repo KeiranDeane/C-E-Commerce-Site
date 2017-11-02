@@ -1,0 +1,43 @@
+﻿@model int
+<html>
+<head>
+    <style type='text/css'>
+        label {
+            display: block;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1>Braintree Credit Card Transaction Form</h1>
+    <form id='payment-form' action='@ViewData["TransparentRedirectUrl"]' method='POST'>
+        <input type='hidden' name='tr_data' value='@ViewData["TrData"]' />
+    
+
+        
+        <div>
+            <h2>Credit Card</h2>
+            <label for='braintree_credit_card_number'>Credit Card Number</label>
+            <input type='text' name='transaction[credit_card][number]' id='braintree_credit_card_number' value='4111111111111111'></input>
+            <label for='braintree_credit_card_exp'>Credit Card Expiry (mm/yyyy)</label>
+            <input type='text' name='transaction[credit_card][expiration_date]' id='braintree_credit_card_exp' value='12/2015'></input>
+        </div>
+        <input class='submit-button' type='submit' />
+    </form>
+
+    <script src="https://js.braintreegateway.com/js/braintree-2.23.0.min.js"></script>
+
+    
+</body>
+
+@*<script type="text/javascript" src="https://js.braintreegateway.com/v1/braintree.js"></script>
+<script type="text/javascript">
+    var braintree = Braintree.create("MIIBCgKCAQEA3bYpn9YXYFc++DL6TgTldAYqKnHoRnjduW3gmN3sSoNZCQq1JWve7JvjlruM/7cUtO0s8o9MqaxByjLbEbkI96dd98f6mIdCDB6/Sf9ru4jouylegZ1lf4b/7YP8sEhxXla+OA6qluPdwfvfVmqrvOygi0cadFJmHdIUQVXTRNJ9KBSJBpRaibJQrHCVeeCgdd1sKXwTVet9P8ypBvnafpYa+7N0s5lCssQfyYwpSU3Jojcf+TcJAATXP7q7SjHNYgA8PQWXXSurtRnufmFiECkLsyTDBJGkbWOGa2qOaC3N6/snWtM40aRmjG1QMOFROZWMGUTxqz1f1GyVhO8m2QIDAQAB");
+        braintree.onSubmitEncryptForm('braintree-payment-form');
+</script>*@
+</html>
