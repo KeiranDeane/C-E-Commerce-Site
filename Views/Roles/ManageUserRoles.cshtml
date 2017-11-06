@@ -32,11 +32,12 @@
     <div style="background-color:Green;">
         <h3>Roles for this user </h3>
         <ol>
+            <p>"This user is in the following roles"</p>
             @foreach (string s in ViewBag.RolesForThisUser)
             {
                 <li>@s</li>
             }
-        </ol>
+        </ol>        
     </div>
 }
 <hr />
